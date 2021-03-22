@@ -10,6 +10,7 @@
     ],
     "esModuleInterop": true,
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "strict": true,
     "noEmit": true,
@@ -26,9 +27,20 @@
     "types": [
       "@nuxt/types",
       "@nuxtjs/axios",
-      "@types/node"
+      "@types/node",
+      "@types/vue",
+      "@types/vuelidate",
+      "@types/jest",
+      "~/plugins/Repository"
     ]
   },
+  "files": [
+    "shims-vue.d.ts"
+  ],
+  "include": [
+    "/**/*.ts",
+    "/**/*.vue"
+  ],
   "exclude": [
     "node_modules",
     ".nuxt",

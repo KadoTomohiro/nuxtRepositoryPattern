@@ -23,7 +23,12 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    '~/plugins/moment.ts',
+    '~/plugins/repositories.ts',
+    '~/plugins/dateFilter.ts',
+    '~/plugins/AxiosAdapter/AxiosMock.ts',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
