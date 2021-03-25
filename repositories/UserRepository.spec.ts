@@ -31,11 +31,11 @@ describe('MenuRepository', () => {
     expect(getSpy).toHaveBeenCalledWith('/user')
     expect(usersResponse.length).toEqual(2)
     usersResponse.forEach((user, i) => {
+      // レスポンスが正しく変換されているかテスト
       const responseUser = responseData[i]
       expect(user.id).toEqual(responseUser.id)
       expect(user.name).toEqual(responseUser.name)
       expect(user.birthDay).toEqual(new Date(responseUser.birthDay))
-      console.log(responseUser.gender)
       expect(user.gender.code).toEqual(responseUser.gender)
     })
   })

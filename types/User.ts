@@ -1,15 +1,15 @@
-const gender = {
+const genderMap = {
   '1': '男性',
   '2': '女性',
 } as const
 
-export type GenderCode = keyof typeof gender
+export type GenderCode = keyof typeof genderMap
 
 export class Gender {
   constructor(public code: GenderCode) {}
 
   get label(): string {
-    return gender[this.code]
+    return genderMap[this.code]
   }
 }
 
