@@ -28,7 +28,6 @@
       "@nuxt/types",
       "@nuxtjs/axios",
       "@types/node",
-      "@types/vue",
       "@types/vuelidate",
       "@types/jest",
       "~/plugins/Repository"

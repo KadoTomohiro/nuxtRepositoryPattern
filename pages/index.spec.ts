@@ -2,11 +2,6 @@ import { shallowMount } from '@vue/test-utils'
 import flushPromises from 'flush-promises'
 import index from './index.vue'
 import { Gender, User } from '~/types/User'
-
-// const localVue = createLocalVue()
-//
-// localVue.use(repositories)
-
 const testUsers = [
   {
     id: '1',
@@ -70,22 +65,33 @@ const testUsers = [
   },
 ]
 
+const mock = jest.fn()
+
 const repositoryMock = {
   user: {
     getAll() {
-      return new Promise<User[]>((resolve) => resolve(testUsers))
+      return mock
     },
   },
 }
 
+const getAllSpy = jest.spyOn(repositoryMock.user, 'getAll')
+
 describe('index', () => {
+  afterEach(() => {
+    mock.mockClear()
+  })
+
   it('初期表示時に、ユーザー一覧を取得すること', async () => {
+    mock.mockResolvedValueOnce(testUsers)
     const wrapper = shallowMount(index, {
       mocks: {
         $repositories: repositoryMock,
       },
     })
     await flushPromises()
+
+    expect(getAllSpy).toHaveBeenCalled()
     const users: User[] = wrapper.vm.$data.users
     expect(users.length).toEqual(10)
     users.forEach((user, index) => {

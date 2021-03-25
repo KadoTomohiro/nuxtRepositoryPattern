@@ -1,6 +1,6 @@
-import { UserApi } from '~/repositories/UserRepository'
+import { UserApiPayload } from '~/repositories/UserRepository'
 
-export const users: UserApi[] = [
+export const users: UserApiPayload[] = [
   {
     id: '1',
     name: '竹中 信雄',
