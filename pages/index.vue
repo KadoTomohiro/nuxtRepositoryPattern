@@ -14,6 +14,7 @@ type Data = {
 }
 
 export default Vue.extend({
+  title: 'User List',
   components: {
     UserList,
   },

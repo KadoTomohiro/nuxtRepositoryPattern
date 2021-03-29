@@ -30,7 +30,7 @@
       "@types/node",
       "@types/vuelidate",
       "@types/jest",
-      "~/plugins/Repository"
+      "~/type"
     ]
   },
   "files": [

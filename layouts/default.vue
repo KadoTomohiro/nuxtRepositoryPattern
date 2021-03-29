@@ -1,8 +1,25 @@
 <template>
   <div>
-    <Nuxt />
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+    <Nuxt ref="page" />
   </div>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  computed: {
+    title(): string {
+      const matchedRoute = this.$route.matched[0]
+      const headInfo = matchedRoute.components.default.options.title // 該当routeのdefault componentのhead情報を取得
+      return headInfo
+    },
+  },
+})
+</script>
 
 <style>
 html {

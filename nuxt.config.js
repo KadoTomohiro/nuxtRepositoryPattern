@@ -28,6 +28,7 @@ export default {
     '~/plugins/repositories.ts',
     '~/plugins/dateFilter.ts',
     '~/plugins/AxiosAdapter/AxiosMock.ts',
+    '~/plugins/title.ts',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

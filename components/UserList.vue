@@ -1,7 +1,9 @@
 <template>
   <div>
     <template v-for="user in users">
-      <UserCard :user="user" :key="user.id"></UserCard>
+      <NuxtLink :to="`/${user.id}`" :key="user.id">
+        <UserCard :user="user"></UserCard>
+      </NuxtLink>
     </template>
   </div>
 </template>
@@ -17,9 +19,6 @@ export default Vue.extend({
   },
   props: {
     users: { type: Array as PropType<User[]> },
-  },
-  methods: {
-    hoge() {},
   },
 })
 </script>
